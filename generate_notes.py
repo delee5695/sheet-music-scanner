@@ -1,6 +1,8 @@
-from music21 import note, stream, dynamics, articulations, expressions
-from PIL import Image
+"""Generate single music notes"""
+
 import os
+from music21 import note, stream
+from PIL import Image
 
 
 def generate_note_image_with_variations(pitch, name, note_length, filename, variations):
@@ -62,34 +64,21 @@ if __name__ == "__main__":
         "eighth": 0.5,
         "16th": 0.25,
     }  # Note lengths
-    #     variation_id = 0
-    #     variations = {
-    #         "articulation": articulations.Staccato(),
-    #         "accidental": None,
-    #     }
-    #     for pitch in pitches:
-    #         for name, length in lengths.items():
-    #             variation_id += 1
-    #             filename = f"note_{pitch}_{name}_variation_{variation_id}"
-    #             generate_note_image_with_variations(
-    #                 pitch, name, length, filename, variations
-    #             )
 
     # Define all variations
-    # articulation_variations = [None, articulations.Staccato(), articulations.Tenuto()]
     articulation_variations = [None]
     accidental_variations = [None, "sharp", "flat"]
 
     # Generate combinations of variations
     for pitch in pitches:
         for name, length in lengths.items():
-            variation_id = 0
+            VARIATION_ID = 0
             if name in ["eighth", "16th"]:
                 variations = {
                     "articulation": None,
                     "accidental": None,
                 }
-                filename = f"note_{pitch}_{name}_variation_{variation_id}"
+                filename = f"note_{pitch}_{name}_variation_{VARIATION_ID}"
                 generate_note_image_with_variations(
                     pitch, name, length, filename, variations
                 )
@@ -100,8 +89,8 @@ if __name__ == "__main__":
                             "articulation": art,
                             "accidental": acc,
                         }
-                        filename = f"note_{pitch}_{name}_variation_{variation_id}"
+                        filename = f"note_{pitch}_{name}_variation_{VARIATION_ID}"
                         generate_note_image_with_variations(
                             pitch, name, length, filename, variations
                         )
-                        variation_id += 1
+                        VARIATION_ID += 1
