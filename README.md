@@ -11,7 +11,7 @@ The website contains:
 
 ### What's in this repo?
 
-- An annotated jupyter notebook explaining all of our data generation, augmentation, and model training code (note_classifier.ipynb).
+- An annotated Colab notebook explaining all of our data generation, augmentation, and model training code ([note_classifier.ipynb](https://colab.research.google.com/drive/1Hfccm4PxE03oROSF8VCTFl2dbOS89iVS?usp=sharing)).
 - The dataset we generated (dataset.zip).
 - Separate code files to generate note data, augment it, and train the model on it (generate_data.py, augment_data.py, train_model.py).
 - The trained model weights and encoder for them (model_weights.onnx, encoder.pkl).
