@@ -6,7 +6,7 @@ We created a CNN model that can detect the pitch and length of a musical note fr
 Visit our website here: https://github.com/dongim04/musical-note-classifier
 
 The website contains:
-- A demo where you can run our model on your own image of a note
+- A demo where you can run our model on your own image of a note (must download and host the website on your local machine to do this)
 - More information about our model (statistics, how we developed it, etc)
 
 ### What's in this repo?
