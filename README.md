@@ -15,3 +15,4 @@ The website contains:
 - The dataset we generated (dataset.zip).
 - Separate code files to generate note data, augment it, and train the model on it (generate_data.py, augment_data.py, train_model.py).
 - The trained model weights and encoder for them (model_weights.onnx, encoder.pkl).
+- Code to load the model weights and run the model on some of your own images (use_model.py).
