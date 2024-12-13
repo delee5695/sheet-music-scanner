@@ -17,20 +17,23 @@ def crop_note_with_variation(input_filename, output_filename, crop_id=0):
     :param input_filename: Full-sized image filename
     :param output_filename: Cropped image filename
     """
+    lower_notes = ["A3", "B3", "C4", "D4", "E4", "F4", "G4", "A4", "B4"]
+
+    # Check if any of the notes are in the filename
+
     with Image.open(input_filename) as img:
+        # if any(note in filename for note in lower_notes):
+        l, t, r, b = 110, 10, 170, 70
         if crop_id == 0:
-            left, top, right, bottom = 115, 10, 155, 50  # Adjust based on staff size
+            left, top, right, bottom = l, t, r, b  # original
         elif crop_id == 1:
-            left, top, right, bottom = 115, 5, 155, 45  # up
+            left, top, right, bottom = l, t - 5, r, b - 5  # up
         elif crop_id == 2:
-            left, top, right, bottom = 115, 15, 155, 55  # down
+            left, top, right, bottom = l, t + 5, r, b + 5  # down
         elif crop_id == 3:
-            left, top, right, bottom = 110, 10, 150, 50  # left
+            left, top, right, bottom = l - 5, t, r - 5, b  # left
         else:
-            left, top, right, bottom = 120, 10, 160, 50  # right
-        cropped_img = img.crop((left, top, right, bottom))
-        cropped_img.save(output_filename)
-        print(f"Cropped and saved {output_filename}")
+            left, top, right, bottom = l, t + 5, r, b + 5  # right
 
 def augment_data(input_foldername, output_foldername):
     file_names = os.listdir(input_foldername)
@@ -118,6 +121,7 @@ if __name__ == "__main__":
     for filename in os.listdir("temp"):
         if filename.endswith(".png"):
             png_files.append(filename)
+    os.makedirs("data", exist_ok=True
     DATA_POINTS = 0
     for file in png_files:
         for crop_id in range(5):
