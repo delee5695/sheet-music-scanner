@@ -121,7 +121,7 @@ if __name__ == "__main__":
     for filename in os.listdir("temp"):
         if filename.endswith(".png"):
             png_files.append(filename)
-    os.makedirs("data", exist_ok=True
+    os.makedirs("data", exist_ok=True)
     DATA_POINTS = 0
     for file in png_files:
         for crop_id in range(5):
