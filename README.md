@@ -15,6 +15,7 @@ The website contains:
 - Separate code files to generate note data, augment it, and train the model on it (generate_data.py, augment_data.py, train_model.py).
 - The trained model weights and encoder for them (model_weights.onnx, encoder.pkl).
 - Code to load the model weights and run the model on some of your own images (use_model.py).
+- Colab notebooks containing the code for separate pitch and length models that we also tried but didn't end up developing (pitch: https://colab.research.google.com/drive/1TPdC_ecRRHT3PCibH7gpcuPoYSRZiJfY), (length: https://colab.research.google.com/drive/1a8o2D7-Ia2m7ToX8gd5USg6IC7ICE07T)
 
 ### Running our code
 Data generation:
