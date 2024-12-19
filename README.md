@@ -29,7 +29,7 @@ If you want to run it on your local machine:
 1. Clone this repository:
    ```bash
    git clone https://github.com/delee5695/sheet-music-scanner.git
-   cd musical-note-classifier
+   cd sheet-music-scanner
    ```
 2. Install dependencies:
    ```bash
